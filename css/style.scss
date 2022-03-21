@@ -1,0 +1,208 @@
+$blue: #00015F;
+$coral: #D78522;
+$light-blue: #EBF3FF;
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  color: #00000090;
+  background: #fff;
+  line-height: 1.7;
+  position: relative;
+  font-family: Poppins !important;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.page-header{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1em;
+  position: sticky;
+  top: 0;
+  background-color: #dfdfdf;
+
+  .logo-wrap{
+    flex-grow: 1;
+    .logo{
+    width: 120px;
+  }
+  }
+
+  .sidenav{
+    display: flex;
+    gap: 1em;
+
+    .icon{
+      height: 30px;
+      width: 30px;
+      background: #f2f2f2;
+      border-radius: 50%;
+    }
+
+    .balance-preview{
+      font-weight: 500;
+      border: thin solid grey;
+      padding: .2em .5em;
+      border-radius: 50px;
+      font-size: .8em;
+      height: max-content;
+      
+      span{
+        display: inline;
+      }
+
+      .amount{
+        color: $blue;
+        font-weight: 600;
+      }
+    }
+
+    .auth-btn{
+      .btn{
+        padding: .5em 1em;
+        border-radius: 50px;
+        color: #fff;
+        background: $blue;
+        outline: none;
+        border: none;
+      }
+    }
+  }
+}
+
+.main-content{
+  width: 400px;
+  max-width: 90%;
+  background: $light-blue;
+  border-radius: 10px;
+  box-shadow: 0 0 8px 4px #00000025;
+  margin:auto;
+  padding: 2em;
+  margin-block: 3em;
+
+  .logo {
+    width: fit-content;
+    margin: 0 auto 2em;
+    img{
+    max-width: 120px;
+    
+  }
+  }
+
+  .wallet-detail-wrapper{
+    background: $blue;
+    color: #fff;
+    padding: 1em;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 1em;
+
+    .title{
+      color: $coral;
+      font-weight: 500;
+      margin-bottom: .4em;
+    }
+    
+
+    .wallet-address{
+      border-bottom: thin solid #fff;
+      margin-bottom: 1em;
+      padding-bottom: 1em;
+    }
+
+    .balance{
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+  }
+
+  .radio-group {
+    display: inline-flex;
+    gap: 1em;
+    font-weight: 500;
+
+    .form-control{
+      display: flex;
+      align-items: center;
+      gap: .4em;
+    }
+    .control{
+      margin-right: 5px;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: 0 0 4px #00000025;
+
+      &:checked{
+        background: $coral;
+      }
+    }
+  }
+
+  .form-group{
+    position: relative;
+    margin-top: 1em;
+    
+    label{
+      position: absolute;
+      left: 1em;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all .20s ease-in-out;
+      background: $light-blue;
+      font-weight: 500;
+
+      &.focus{
+        top: 0%;
+      }
+    }
+
+    .text-control {
+      padding: 1.5em 1em;
+      background: transparent;
+      border: 1px solid grey;
+      border-radius: 10px;
+      outline: none !important;
+      width: 100%;
+
+      &:focus{
+        border-color: $coral;
+      }
+    }
+  }
+
+  .form-action{
+    .submit{
+      padding: 1em;
+      text-align: center;
+      border-radius: 50px;
+      background-color: $coral;
+      color: #fff;
+      font-weight: 500;
+      width: 100%;
+      font-size: 1.1em;
+      outline: none;
+      border: none;
+      margin-top: 1em;
+      transition: all .20s ease-in-out;
+
+      &:hover{
+        background-color: #935a16;
+        transform: scale(1.1);
+      }
+
+      &:active{
+        transform: scale(.9);
+      }
+
+    }
+  }
+}

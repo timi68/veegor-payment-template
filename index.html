@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Red+Hat+Display:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <title>Veegor Payment Integration</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <header class="page-header main-page-header">
+        <div class="logo-wrap">
+          <img src="/static/images/logo-dark.png" alt="page-logo" class="logo">
+        </div>
+        <nav class="sidenav">
+          <div class="notification-icon icon">
+            <img src="/static/images/notification.png" alt="notification-icon" title="notification" class="icon">
+          </div>
+          <div class="refresh-icon icon">
+            <img src="/static/images/refresh.png" alt="refresh-icon" class="icon" title="notification">
+          </div>
+          <div class="balance-preview">
+            <span class="label">BAL:</span>
+            <span class="amount">0 VGR</span>
+          </div>
+          <div class="auth-btn">
+            <button class="sign-in btn">Sign in</button>
+          </div>
+        </nav>
+      </header>
+      <div class="main-content">
+        <div class="box payment-box">
+          <div class="logo">
+            <img src="/static/images/logo-dark.png" alt="page-logo">
+          </div>
+          <div class="wallet-detail-wrapper">
+            <div class="wallet-address">
+              <div class="title"><span>Wallet Address</span></div>
+              <div class="text-label">0x000..53839</div>
+            </div>
+            <div class="wallet-balance">
+              <div class="title"><span>Balance</span></div>
+              <div class="text-label balance" id="#ammount">
+                0 VGR
+              </div>
+              <div class="conversion dollar" id="#toDollar">$0</div>
+            </div>
+          </div>
+          <div class="radio-group">
+            <div class="form-control">
+              <input type="radio" name="PaymentType" id="type-product" class="control">
+              <label for="#type-product" class="form-control-label">Product</label>
+            </div>
+            <div class="form-control">
+              <input type="radio" name="PaymentType" id="type-business" class="control">
+              <label for="#type-product" class="form-control-label">Business</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="#gif" class="gif-label text-control-label">Gif Keyword</label>
+            <input type="text" name="gifKeyword" class="text-control gif" id="gif">
+          </div>
+          <div class="form-group">
+            <label for="description" class="description-label text-control-label">Description</label>
+            <input type="text" id="description" class="text-control description">
+          </div>
+          <div class="form-action">
+            <button class="submit">
+              <span>Sign in</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // getting all the text-control
+    const textControl = document.querySelectorAll(".text-control");
+    const textControlLabel = document.querySelectorAll(".text-control-label");
+
+
+    // looping through each text-control
+    textControl.forEach(Process)
+
+
+    function Process(element, i) {
+      let _this = element;
+
+      _this.onfocus = () => {
+        textControlLabel[i].classList.add("focus")
+      }
+
+      _this.onblur = () => {
+        _this.value === "" && textControlLabel[i].classList.remove("focus")
+      }
+    }
+  </script>
+</body>
+
+</html>
